@@ -56,14 +56,20 @@
 <p>R package to download from the <a href="https://opendengue.org" class="external-link">OpenDengue project</a> repository.</p>
 <p>It is possible to download data from the project, using cached or updated versions and select columns to subset prior reading data to memory.</p>
 <div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<pre class="{r}"><code><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"rfsaldanha/opendenguedata"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level2">
 <h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h2>
 <p>Read data from temporal extract.</p>
-<pre class="{r}"><code><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_data.html">read_data</a></span><span class="op">(</span>extract <span class="op">=</span> <span class="st">"temporal"</span>, as_data_frame <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<pre class="{r}"><code><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">opendenguedata</span><span class="fu">::</span><span class="fu"><a href="reference/read_data.html">read_data</a></span><span class="op">(</span>extract <span class="op">=</span> <span class="st">"temporal"</span>, as_data_frame <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></code></pre>
 <p>Read data from spatial extract and return only selected columns.</p>
-<pre class="{r}"><code><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_data.html">read_data</a></span><span class="op">(</span>extract <span class="op">=</span> <span class="st">"spatial"</span>, as_data_frame <span class="op">=</span> <span class="cn">TRUE</span>, </span>
+<pre class="{r}"><code><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">opendenguedata</span><span class="fu">::</span><span class="fu"><a href="reference/read_data.html">read_data</a></span><span class="op">(</span>extract <span class="op">=</span> <span class="st">"spatial"</span>, as_data_frame <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>                 columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"full_name"</span>, <span class="st">"calendar_start_date"</span>, <span class="st">"calendar_end_date"</span>, <span class="st">"dengue_total"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></code></pre>
