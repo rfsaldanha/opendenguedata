@@ -9,7 +9,7 @@
 #' @return A `data.frame` or an Arrow Table object.
 #' @export
 #'
-#' @example \dontrun{ if (interactive()) {
+#' @examples \dontrun{ if (interactive()) {
 #' read_data(extract = "national", as_data_frame = TRUE)
 #'}}
 read_data <- function(extract, columns = NULL, as_data_frame = FALSE,
