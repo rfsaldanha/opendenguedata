@@ -55,7 +55,7 @@ res <- read_data(extract = "temporal", as_data_frame = FALSE, showProgress = FAL
 glimpse(res)
 ```
 
-The `collect` function is internally reponsible to prepare and send the query to the Arrow Table object and collects its results, returning a `tibble` object.
+The `collect` function is internally responsible to prepare and send the query to the Arrow Table object and collects its results, returning a `tibble` object.
 
 ### The `columns` argument
 
