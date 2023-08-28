@@ -11,7 +11,7 @@ test_that("read_data with extract spatial works", {
   expect_equal(nrow(res), 383935)
 })
 
-test_that("read_data with extract spatial works", {
+test_that("read_data with extract temporal works", {
   res <- read_data(extract = "temporal", as_data_frame = FALSE)
 
   expect_equal(nrow(res), 390627)
