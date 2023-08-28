@@ -7,15 +7,6 @@
 #' @return A string to the address of the file in a tempdir
 #'
 #' @keywords internal
-#' @examples \dontrun{ if (interactive()) {
-#' # Generate url
-#' file_url <- 'https://github.com/OpenDengue/master-repo/raw/6d55d8158dbd70d03ddb2f39c18ba560bab4b163/data/releases/V1.1/National_extract_V1_1.csv'
-#'
-#' # download data
-#' download_file(file_url = file_url,
-#'               showProgress = TRUE,
-#'               cache = TRUE)
-#'}}
 download_file <- function(file_url = parent.frame()$file_url,
                           showProgress = parent.frame()$showProgress,
                           cache = parent.frame()$cache){ # nocov start
