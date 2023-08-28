@@ -17,7 +17,7 @@ read_data(
 
 \item{columns}{character vector. Columns names to subset.}
 
-\item{as_data_frame}{logical. If \code{TRUE} returns a \code{data.frame} object. If \code{FALSE} returns an Arrow Table object. Defaults to \code{FALSE}.}
+\item{as_data_frame}{logical. If \code{TRUE} returns a \code{tibble} object. If \code{FALSE} returns an Arrow Table object. Defaults to \code{FALSE}.}
 
 \item{showProgress}{logical. Show download bar progress on console.}
 

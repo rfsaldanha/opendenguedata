@@ -1,0 +1,80 @@
+---
+title: "Package general use tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{general_use_tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This is a general use tutorial of the package.
+
+## Package instalation and loading
+
+For the package installation, use the remotes package:
+
+```{r, eval=FALSE}
+remotes::install_github("rfsaldanha/opendenguedata")
+```
+
+After installation, load the package. We also will use functions from the `{dplyr}` package.
+
+```{r setup}
+library(opendenguedata)
+library(dplyr)
+```
+
+## Reading data
+
+The OpenDengueData project presents dengue data on three different extracts: national, spatial and temporal. Use the `read_data` function to download and read data from one of these extracts.
+
+```{r}
+res <- read_data(extract = "temporal", as_data_frame = TRUE)
+
+dplyr::glimpse(res)
+```
+
+### The `as_data_frame` argument
+
+The `read_data` function `as_data_frame` arguments defaults to `FALSE`. This means that the package will return an Arrow Table object. The advantage of this format is that the data is not directly loaded to the computer memory after download. This is particular useful when the dataset is too big to fit on memory. 
+
+It is recommendated to set this argument to `FALSE` to filter rows and use other `{dplyr}` verbs before to load the data to memory.
+
+```{r}
+res <- read_data(extract = "temporal", as_data_frame = FALSE) %>%
+  filter(Year == 2021) %>%
+  collect()
+
+glimpse(res)
+```
+
+The `collect` function is internally reponsible to prepare and send the query to the Arrow Table object and collects its results, returning a `tibble` object.
+
+### The `columns` argument
+
+A vector of columns names may presented to subset the dataset.
+
+```{r}
+res <- opendenguedata::read_data(extract = "spatial", as_data_frame = TRUE, 
+                 columns = c("full_name", "calendar_start_date", 
+                             "calendar_end_date", "dengue_total"))
+
+dplyr::glimpse(res)
+```
+
+### The `cache` argument
+
+The `read_data` function download data from the OpenDengue project repository. To avoid repeatedly downloads, the `cache` argument creates a temporary folder inside the computer with the download data. After the first download, the file is cached on this folder and referenced on next runs of the function.
+
+To force a new download and refresh the package cache, set this argument to `FALSE`.
+
+```{r, eval=FALSE}
+res <- opendenguedata::read_data(extract = "spatial", cache = FALSE)
+```

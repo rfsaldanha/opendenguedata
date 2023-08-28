@@ -2,7 +2,7 @@
 #'
 #' @param extract character. `national`, `spatial` or `temporal`
 #' @param columns character vector. Columns names to subset.
-#' @param as_data_frame logical. If `TRUE` returns a `data.frame` object. If `FALSE` returns an Arrow Table object. Defaults to `FALSE`.
+#' @param as_data_frame logical. If `TRUE` returns a `tibble` object. If `FALSE` returns an Arrow Table object. Defaults to `FALSE`.
 #' @param showProgress logical. Show download bar progress on console.
 #' @param cache logical. Use cached data after first download.
 #'
