@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   general_use_tutorial: general_use_tutorial.html
-last_built: 2023-08-28T12:50Z
+last_built: 2023-08-28T12:59Z
 urls:
   reference: https://rfsaldanha.github.io/opendenguedata/reference
   article: https://rfsaldanha.github.io/opendenguedata/articles
