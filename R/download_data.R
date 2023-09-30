@@ -44,6 +44,9 @@ download_file <- function(file_url = parent.frame()$file_url,
     return(invisible(NULL))
 
   } else {
+    # unzip file
+    temp_local_file <- utils::unzip(zipfile = temp_local_file, exdir = cache_dir)
+
     return(temp_local_file)
   }
 } # nocov end
