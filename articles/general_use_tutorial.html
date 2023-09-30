@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">opendenguedata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,6 +43,9 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/general_use_tutorial.html">Package general use tutorial</a>
   </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
@@ -103,22 +106,24 @@ function to download and read data from one of these extracts.</p>
 <code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_data.html">read_data</a></span><span class="op">(</span>extract <span class="op">=</span> <span class="st">"temporal"</span>, as_data_frame <span class="op">=</span> <span class="cn">TRUE</span>, showProgress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 390,627</span></span>
-<span><span class="co">#&gt; Columns: 14</span></span>
-<span><span class="co">#&gt; $ adm_0_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTAN", "AFGH…</span></span>
-<span><span class="co">#&gt; $ adm_1_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span><span class="co">#&gt; $ adm_2_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span><span class="co">#&gt; $ full_name           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTAN", "AFGH…</span></span>
-<span><span class="co">#&gt; $ ISO_A0              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "…</span></span>
-<span><span class="co">#&gt; $ FAO_GAUL_code       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1011446, 1011446, 1011446, 1011446, 1011446, 10114…</span></span>
-<span><span class="co">#&gt; $ RNE_iso_code        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "…</span></span>
-<span><span class="co">#&gt; $ calendar_start_date <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-03, 2021-01-10, 2021-01-17, 2021-01-24, 2…</span></span>
-<span><span class="co">#&gt; $ calendar_end_date   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-09, 2021-01-16, 2021-01-23, 2021-01-30, 2…</span></span>
-<span><span class="co">#&gt; $ Year                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 20…</span></span>
-<span><span class="co">#&gt; $ dengue_total        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 101, 151, 201, 202, 100, 251, 101, 61, 99, 112, 70…</span></span>
-<span><span class="co">#&gt; $ S_res               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Admin0", "Admin0", "Admin0", "Admin0", "Admin0", …</span></span>
-<span><span class="co">#&gt; $ T_res               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Week", "Week", "Week", "Week", "Week", "Week", "W…</span></span>
-<span><span class="co">#&gt; $ sourceID            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "WHO/EMRO-ALL-2016/2021-Y01", "WHO/EMRO-ALL-2016/2…</span></span></code></pre></div>
+<span><span class="co">#&gt; Rows: 2,484,356</span></span>
+<span><span class="co">#&gt; Columns: 16</span></span>
+<span><span class="co">#&gt; $ adm_0_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTA…</span></span>
+<span><span class="co">#&gt; $ adm_1_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</span></span>
+<span><span class="co">#&gt; $ adm_2_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</span></span>
+<span><span class="co">#&gt; $ full_name                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTA…</span></span>
+<span><span class="co">#&gt; $ ISO_A0                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG",…</span></span>
+<span><span class="co">#&gt; $ FAO_GAUL_code                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1011446, 1011446, 1011446, 1011446, 10114…</span></span>
+<span><span class="co">#&gt; $ RNE_iso_code                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG",…</span></span>
+<span><span class="co">#&gt; $ IBGE_code                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</span></span>
+<span><span class="co">#&gt; $ calendar_start_date          <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-03, 2021-01-10, 2021-01-17, 2021…</span></span>
+<span><span class="co">#&gt; $ calendar_end_date            <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-09, 2021-01-16, 2021-01-23, 2021…</span></span>
+<span><span class="co">#&gt; $ Year                         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021, 2021, 2021, 2021, 2021, 2021, 2021,…</span></span>
+<span><span class="co">#&gt; $ dengue_total                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 101, 151, 201, 202, 100, 251, 101, 61, 99…</span></span>
+<span><span class="co">#&gt; $ case_definition_standardised <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Suspected", "Suspected", "Suspected", "S…</span></span>
+<span><span class="co">#&gt; $ S_res                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Admin0", "Admin0", "Admin0", "Admin0", "…</span></span>
+<span><span class="co">#&gt; $ T_res                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Week", "Week", "Week", "Week", "Week", "…</span></span>
+<span><span class="co">#&gt; $ UUID                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "WHOEMRO-ALL-2021-Y01-05", "WHOEMRO-ALL-2…</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="the-as_data_frame-argument">The <code>as_data_frame</code> argument<a class="anchor" aria-label="anchor" href="#the-as_data_frame-argument"></a>
 </h3>
@@ -137,22 +142,24 @@ data to memory.</p>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/compute.html" class="external-link">collect</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 17,898</span></span>
-<span><span class="co">#&gt; Columns: 14</span></span>
-<span><span class="co">#&gt; $ adm_0_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTAN", "AFGH…</span></span>
-<span><span class="co">#&gt; $ adm_1_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span><span class="co">#&gt; $ adm_2_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span><span class="co">#&gt; $ full_name           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTAN", "AFGH…</span></span>
-<span><span class="co">#&gt; $ ISO_A0              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "…</span></span>
-<span><span class="co">#&gt; $ FAO_GAUL_code       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1011446, 1011446, 1011446, 1011446, 1011446, 10114…</span></span>
-<span><span class="co">#&gt; $ RNE_iso_code        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "AFG", "…</span></span>
-<span><span class="co">#&gt; $ calendar_start_date <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-03, 2021-01-10, 2021-01-17, 2021-01-24, 2…</span></span>
-<span><span class="co">#&gt; $ calendar_end_date   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-09, 2021-01-16, 2021-01-23, 2021-01-30, 2…</span></span>
-<span><span class="co">#&gt; $ Year                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 20…</span></span>
-<span><span class="co">#&gt; $ dengue_total        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 101, 151, 201, 202, 100, 251, 101, 61, 99, 112, 70…</span></span>
-<span><span class="co">#&gt; $ S_res               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Admin0", "Admin0", "Admin0", "Admin0", "Admin0", …</span></span>
-<span><span class="co">#&gt; $ T_res               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Week", "Week", "Week", "Week", "Week", "Week", "W…</span></span>
-<span><span class="co">#&gt; $ sourceID            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "WHO/EMRO-ALL-2016/2021-Y01", "WHO/EMRO-ALL-2016/2…</span></span></code></pre></div>
+<span><span class="co">#&gt; Rows: 214,136</span></span>
+<span><span class="co">#&gt; Columns: 16</span></span>
+<span><span class="co">#&gt; $ adm_0_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTA…</span></span>
+<span><span class="co">#&gt; $ adm_1_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</span></span>
+<span><span class="co">#&gt; $ adm_2_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</span></span>
+<span><span class="co">#&gt; $ full_name                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTA…</span></span>
+<span><span class="co">#&gt; $ ISO_A0                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG",…</span></span>
+<span><span class="co">#&gt; $ FAO_GAUL_code                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1011446, 1011446, 1011446, 1011446, 10114…</span></span>
+<span><span class="co">#&gt; $ RNE_iso_code                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFG", "AFG", "AFG", "AFG", "AFG", "AFG",…</span></span>
+<span><span class="co">#&gt; $ IBGE_code                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</span></span>
+<span><span class="co">#&gt; $ calendar_start_date          <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-03, 2021-01-10, 2021-01-17, 2021…</span></span>
+<span><span class="co">#&gt; $ calendar_end_date            <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-09, 2021-01-16, 2021-01-23, 2021…</span></span>
+<span><span class="co">#&gt; $ Year                         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021, 2021, 2021, 2021, 2021, 2021, 2021,…</span></span>
+<span><span class="co">#&gt; $ dengue_total                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 101, 151, 201, 202, 100, 251, 101, 61, 99…</span></span>
+<span><span class="co">#&gt; $ case_definition_standardised <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Suspected", "Suspected", "Suspected", "S…</span></span>
+<span><span class="co">#&gt; $ S_res                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Admin0", "Admin0", "Admin0", "Admin0", "…</span></span>
+<span><span class="co">#&gt; $ T_res                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Week", "Week", "Week", "Week", "Week", "…</span></span>
+<span><span class="co">#&gt; $ UUID                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "WHOEMRO-ALL-2021-Y01-05", "WHOEMRO-ALL-2…</span></span></code></pre></div>
 <p>The <code>collect</code> function is internally responsible to
 prepare and send the query to the Arrow Table object and collects its
 results, returning a <code>tibble</code> object.</p>
@@ -169,12 +176,12 @@ results, returning a <code>tibble</code> object.</p>
 <span>                 </span>
 <span></span>
 <span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 383,935</span></span>
+<span><span class="co">#&gt; Rows: 2,476,894</span></span>
 <span><span class="co">#&gt; Columns: 4</span></span>
 <span><span class="co">#&gt; $ full_name           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AFGHANISTAN", "AFGHANISTAN", "AFGHANISTAN", "AFGH…</span></span>
 <span><span class="co">#&gt; $ calendar_start_date <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-03, 2021-01-10, 2021-01-17, 2021-01-24, 2…</span></span>
 <span><span class="co">#&gt; $ calendar_end_date   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-01-09, 2021-01-16, 2021-01-23, 2021-01-30, 2…</span></span>
-<span><span class="co">#&gt; $ dengue_total        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 101, 151, 201, 202, 100, 251, 101, 61, 99, 112, 70…</span></span></code></pre></div>
+<span><span class="co">#&gt; $ dengue_total        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 101, 151, 201, 202, 100, 251, 101, 61, 99, 112, 70…</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="the-cache-argument">The <code>cache</code> argument<a class="anchor" aria-label="anchor" href="#the-cache-argument"></a>
